@@ -12,4 +12,4 @@
         Perşembe akşamına kadar githup reposuna gönderilecek. Takım içinde herkes yapacak.
 
 
-        KONU: Bir şirkete girmek isteyen çalışan gelir.
+        KONU: Bir şirkete girmek isteyen çalışan gelir. yarın ders çalışacağız
