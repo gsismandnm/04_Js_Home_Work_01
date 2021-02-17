@@ -1,22 +1,23 @@
-function loginol(ikinciislem){
-    setTimeout(function()  {
-        console.log('login başarılı');   
-        ikinciislem();   
-    }, 2000);
+function plakaOku() {
+setTimeout(function(gecisYapıldı) {
+    console.log ('Plaka Okundu')
+    gecisYapıldı();
+    
+}, 1000);    
 }
 
-function listele(){
+function gecisYapıldı() {
     setTimeout(() => {
-    console.log('ilanlar listelendi');    
+        console.log('Geciş Başarılı')
+        
     }, 500);
+    
 }
 
-loginol(listele);
+/*function yeniGecis() {
+    setTimeout(() => {
+        console.log('Yeni Geçiş İçin Sistem Hazır')
+    }, 250);    
+}*/
+plakaOku(gecisYapıldı ());
 
-
-//NOT JS'de önce kolay işlemler yapılır sonra diğeri olur. Yani asenkron çalışır. 
-//Ancak Call back'te işlem sırasını belirliyorsun. 
-//İstediğin senkron olmasını yani sırayla yapılamını sağlar. 
-//Yukarıdaki örnekte şayet listele yazısı yani callback olmasaydı. 500 küçük olduğu için
-//önce listele çalışır, sonra 2000 olduğu için loginol çalışır.
-//Bir başka şeyde bu örnekte olduğu gibi şayet login başarılı ise listele çalışsın da denilebilir.
