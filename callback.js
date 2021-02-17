@@ -1,6 +1,6 @@
 function loginol(ikinciislem){
-    setTimeout(function() => {
-        console.log('login başarılı');     
+    setTimeout(function()  {
+        console.log('login başarılı');   
         ikinciislem();   
     }, 2000);
 }
