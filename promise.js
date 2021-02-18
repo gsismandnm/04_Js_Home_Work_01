@@ -1,31 +1,70 @@
-//en üst satırdaki durum true ve false sadece doğru yada yanlışı görmek için yazıldı.
-var durum = true;
-var user = {id:1, adi:"Murat"};
-var ilanlar = {id: 1, uid:1, ilan:"Araba"};
+// BİR OKULDA ÖĞRENCİ KAYIT İŞLEMLERİ YAPILMAKTADIR. YAPILACAK İŞLEM BASAMAKLARI 
+// AŞAĞIDAKİ SIRADA GERÇEKLEŞTİRİLECEKTİR. 
+//     1.YENİ KAYIT EKRANININ AÇILMASI
+//     2.KİMLİK BİLGİLERİNİN GİRİLMESİ
+//     3.BİLGİLER KAYDEDİLMESİ 
+//     4.KAYIT İŞLEMİNİN TAMAMLANMASI 
 
-function login (){
-    return new Promise (function (resolve, reject)){
-        if (durum == true){
-            resolve(user);
+
+
+
+let islemTamam = true;
+function suKaynadi() {
+    return new Promise(function (resolve, reject) {
+        if (islemTamam == true) {
+            resolve('Su Kaynadı...');
+            //islemTamam =false;
         } else {
-            reject("kullanıcı bilgileri bulunamadı");
+            reject('Su KaynaMAdı...');
         }
-    };
+    });
+}
+function demAtildi() {
+    return new Promise(function (resolve, reject) {
+        if (islemTamam == true) {
+            resolve('Kaynayan suya çay atıldı...');
+            //islemTamam =false;
+        } else {
+            reject('Kaynayan suya çay atılMAdı...');
+        }
+    });
+}
+function demlemeSuresiDoldu() {
+    return new Promise(function (resolve, reject) {
+        if (islemTamam == true) {
+            resolve('Çayın demlenme süresi tamamlandı...');     
+            //islemTamam =false;       
+        } else {
+            reject('Çayın demlenme süresi tamamlanMAdı...');
+        }
+    });
+}
+function cayDemlendi(){    
+    console.log('Çay demlendi.');     
 }
 
-function listele(kullanıcı){
-    setTimeout(() => {
-        console.log("Kullanıcı Adı:" + user.adi)
-        console.log (ilanlar);
-    }, 2000);
-}
-
-
-login()
-    .then((kullanıcı_bilgileri)) =>{
-        console.log(kullanıcı_bilgileri);
-        listele ()
+suKaynadi()
+    .then((data) => {
+        //setTimeout(() => { resolve(console.log(data)); }, 2000);
+        console.log(data);
+        demAtildi()  
+        .then((data) => {
+            //setTimeout(() => { resolve(console.log(data)); }, 2000);
+            console.log(data)
+            demlemeSuresiDoldu()
+            .then((data) => {
+                //setTimeout(() => { resolve(console.log(data)); }, 2000);
+                console.log(data);
+                cayDemlendi();        
+            })
+            .catch((hata) => {
+                console.log(hata);
+            });    
+        })
+        .catch((hata) => {
+            console.log(hata);
+        });
     })
-    .catch ((hata)) => {
+    .catch((hata) => {
         console.log(hata);
     });

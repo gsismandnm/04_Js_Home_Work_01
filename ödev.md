@@ -1,15 +1,7 @@
-ödev tanımı
-    asenkron yapılar
-        1.  problemin tanımı (problem oluşturup çözme login'den sonra listeleme gibi)
-            -   probleminTanımı.md
+ÖDEV KONUSU (SORUNUN TANIMLANMASI)
 
-        2.  problemin çözümü (aşağıdaki yöntemler kullanılarak çözülecek.)
-            -   callback.js
-            -   promise.js
-            -   async-await.js
-
-
-        Perşembe akşamına kadar githup reposuna gönderilecek. Takım içinde herkes yapacak.
-
-
-        KONU: Bir şirkete girmek isteyen çalışan gelir. yarın ders çalışacağız
+BİR OKULDA ÖĞRENCİ KAYIT İŞLEMLERİ YAPILMAKTADIR. YAPILACAK İŞLEM BASAMAKLARI AŞAĞIDAKİ SIRADA GERÇEKLEŞTİRİLECEKTİR. 
+    1.YENİ KAYIT EKRANININ AÇILMASI
+    2.KİMLİK BİLGİLERİNİN GİRİLMESİ
+    3.BİLGİLER KAYDEDİLMESİ 
+    4.KAYIT İŞLEMİNİN TAMAMLANMASI 

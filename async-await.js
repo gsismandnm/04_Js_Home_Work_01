@@ -1,36 +1,71 @@
-var durum = true;
-var user = { id: 1, adi: "Murat" };
+// BİR OKULDA ÖĞRENCİ KAYIT İŞLEMLERİ YAPILMAKTADIR. YAPILACAK İŞLEM BASAMAKLARI 
+// AŞAĞIDAKİ SIRADA GERÇEKLEŞTİRİLECEKTİR. 
+//     1.YENİ KAYIT EKRANININ AÇILMASI
+//     2.KİMLİK BİLGİLERİNİN GİRİLMESİ
+//     3.BİLGİLER KAYDEDİLMESİ 
+//     4.KAYIT İŞLEMİNİN TAMAMLANMASI 
 
-function login() {
+
+let islemTamam = true;
+function suKaynadi() {
     return new Promise(function (resolve, reject) {
-        if (durum == true) {
-            setTimeout(() => {
-                resolve(console.log({ id: 1, adi: "Ahmet" }));
-            }, 3000);
+        if (islemTamam == true) {
+            resolve('Su Kaynadı...');
+            //islemTamam =false;
         } else {
-            reject('kullanici bilgileri bulunamadi');
+            reject('Su KaynaMAdı...');
         }
     });
 }
-
-function listele() {
+function demAtildi() {
     return new Promise(function (resolve, reject) {
-        setTimeout(() => {
-            resolve(console.log("ilanlar listelendi"));
-        }, 2000);
-    })
+        if (islemTamam == true) {
+            resolve('Kaynayan suya çay atıldı...');
+            //islemTamam =false;
+        } else {
+            reject('Kaynayan suya çay atılMAdı...');
+        }
+    });
 }
-
-function yorumlar() {
+function demlemeSuresiDoldu() {
     return new Promise(function (resolve, reject) {
-        setTimeout(function () { resolve(console.log("yorumlar geldi")); }, 500);
-    })
+        if (islemTamam == true) {
+            resolve('Çayın demlenme süresi tamamlandı...');     
+            //islemTamam =false;       
+        } else {
+            reject('Çayın demlenme süresi tamamlanMAdı...');
+        }
+    });
 }
-
+function cayDemlendi(){    
+    console.log('Çay demlendi.');     
+}
 async function islemAkisi() {
-    await login();
-    await listele();
-    yorumlar();
-}
+    await suKaynadi()
+    .then((data) => {
+        //setTimeout(() => { console.log(data); }, 2000);
+        console.log(data);
+        demAtildi()  
+        .then((data) => {
+            //setTimeout(() => { resolve(console.log(data)); }, 2000);
+            console.log(data);
+            demlemeSuresiDoldu()
+            .then((data) => {
+                //setTimeout(() => { resolve(console.log(data)); }, 2000);
+                console.log(data);
+                cayDemlendi();        
+            })
+            .catch((hata) => {
+                console.log(hata);
+            });    
+        })
+        .catch((hata) => {
+            console.log(hata);
+        });
+    })
+    .catch((hata) => {
+        console.log(hata);
+    });
 
+}
 islemAkisi();
