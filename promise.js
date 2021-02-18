@@ -6,56 +6,55 @@
 //     4.KAYIT İŞLEMİNİN TAMAMLANMASI 
 
 
-
-
 let islemTamam = true;
-function suKaynadi() {
+function kayıtEkranı() {
+    console.log('Yeni Kayıt Ekranı Açılıyor. Lütfen Bekleyiniz.');
     return new Promise(function (resolve, reject) {
         if (islemTamam == true) {
-            resolve('Su Kaynadı...');
+            resolve('Yeni Kayıt Ekranı Açıldı');
             //islemTamam =false;
         } else {
-            reject('Su KaynaMAdı...');
+            reject('Teknik Bir Arıza Nedeniyle Kayıt Ekranı Açılamadı');
         }
     });
 }
-function demAtildi() {
+function bilgilerGirildi() {
     return new Promise(function (resolve, reject) {
         if (islemTamam == true) {
-            resolve('Kaynayan suya çay atıldı...');
+            resolve('Kimlik Bilgileri Giriliyor');
             //islemTamam =false;
         } else {
-            reject('Kaynayan suya çay atılMAdı...');
+            reject('Kimlik Bilgilerin Girilmesi Esnasında Teknik Bir Arıza Yaşandı');
         }
     });
 }
-function demlemeSuresiDoldu() {
+function sistemeKaydedildi() {
     return new Promise(function (resolve, reject) {
         if (islemTamam == true) {
-            resolve('Çayın demlenme süresi tamamlandı...');     
+            resolve('Bilgiler Kaydediliyor Lütfen Bekleyiniz');     
             //islemTamam =false;       
         } else {
-            reject('Çayın demlenme süresi tamamlanMAdı...');
+            reject('Kayıt Sırasında Teknik Bir Arıza Meydana Geldi');
         }
     });
 }
-function cayDemlendi(){    
-    console.log('Çay demlendi.');     
+function kayıtTamamlandı(){     
+    console.log('Kayıt Başarı İle Tamamlandı');     
 }
 
-suKaynadi()
+kayıtEkranı()
     .then((data) => {
         //setTimeout(() => { resolve(console.log(data)); }, 2000);
         console.log(data);
-        demAtildi()  
+        bilgilerGirildi()  
         .then((data) => {
             //setTimeout(() => { resolve(console.log(data)); }, 2000);
             console.log(data)
-            demlemeSuresiDoldu()
+            sistemeKaydedildi()
             .then((data) => {
                 //setTimeout(() => { resolve(console.log(data)); }, 2000);
                 console.log(data);
-                cayDemlendi();        
+                kayıtTamamlandı();        
             })
             .catch((hata) => {
                 console.log(hata);

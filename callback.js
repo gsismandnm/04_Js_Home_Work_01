@@ -10,7 +10,6 @@
 kayıtEkranı(bilgilerGirildi);
 
 function kayıtEkranı(bilgilerGirildi){
-    console.log('Yeni Kayıt Ekranı Açılıyor. Lütfen Bekleyiniz.');
     setTimeout(() => {
         console.log('Yeni Kayıt Ekranı Açıldı.');
         bilgilerGirildi(sistemeKaydedildi);
